@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <title>蜀黍之家-首页</title>
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">    
+    <link rel="stylesheet" href="../css/home.css" />
+    <script src="../js/template.js"></script>
+  </head>
+  <body>
+    <div class="container-home">
+      <!-- 头部 -->
+      <div class="header">
+        <div class="header-left">
+          <div class="header-left-city">
+            <span>杭州</span>
+            <img src="../img/top-arrow.png" alt="">
+          </div>
+          <div class="header-left-weather">晴朗13</div>
+        </div>
+        <div class="header-center">
+          <div class="input-img">
+            <img src="../img/top-search.png" alt="">
+          </div>
+          <input class="search-input" placeholder="请输入您想查找的内容" type="text">
+        </div>
+        <div class="header-right">
+          <img src="../img/top-sweep.png" alt="">
+        </div>
+      </div>
+      <!-- 宣传位 轮播图 -->
+      <div class="banner">
+        <div class="swiper-container">
+          <div class="swiper-wrapper" id="bannerSwiper">
+            <!-- 内嵌template -->
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="btn-know">
+          <span>点击了解</span>
+          <img src="../img/home-triangle.png" alt="">
+        </div>
+      </div>
+      <!-- 内容区域 -->
+      <div class="main-content">
+        <!-- 八个主题 -->
+        <div class="theme-warp">
+          <div class="theme-title">
+            <span>爱警</span><span>·慧警</span><span>你要的生活这里都有</span>
+          </div>
+          <nav class="theme-list">
+            <a to="">
+              <img src="../img/theme-1.png" alt="" />
+              <span>附近</span>
+            </a>
+            <a to="">
+              <img src="../img/theme-2.png" alt="" />
+              <span>医疗/口腔</span>
+            </a>
+            <a to="">
+              <img src="../img/theme-3.png" alt="" />
+              <span>健康/保险</span>
+            </a>
+            <a to="">
+              <img src="../img/theme-4.png" alt="" />
+              <span>教育/学习</span>
+            </a>
+            <a to="">
+              <img src="../img/theme-5.png" alt="" />
+              <span>酒店住宿</span>
+            </a>
+            <a to="">
+              <img src="../img/theme-6.png" alt="" />
+              <span>免费景区</span>
+            </a>
+            <a to="">
+              <img src="../img/theme-7.png" alt="" />
+              <span>免费场馆</span>
+            </a>
+            <a to="">
+              <img src="../img/theme-8.png" alt="" />
+              <span>充值缴费</span>
+            </a>
+          </nav>
+        </div>
+        <!-- 广告位 -->
+        <div class="banner-warp">
+          <img src="../img/home-banner2.png" alt="">
+        </div>
+        <!-- 超级品牌 -->
+        <div class="brand-warp">
+          <img src="" alt="">
+        </div>
+        <!-- 轮播图模板 -->
+        <script id="test" type="text/html">
+          {{each list value}}
+            <div class="swiper-slide">
+              <img src="{{value}}" alt="">
+            </div>
+          {{/each}}
+        </script>
+        <script>
+          var data = {
+            list: ['../img/home-banner.png', '../img/home-banner.png', '../img/home-banner.png', '../img/home-banner.png', '../img/home-banner.png', '../img/home-banner.png', '../img/home-banner.png']
+          }
+          var html = template('test', data);
+          document.getElementById('bannerSwiper').innerHTML = html;
+        </script>
+      </div>
+      <!-- 底部的tabs -->
+      <div class="tabs-group">
+        <a class="tab-item tab-item-active" href="user.html">
+          <div class="tab-img">
+            <img src="../img/tabs-home.png" alt="">
+          </div>
+          <p class="tab-font tab-font-active">首页</p>
+        </a>
+        <a class="tab-item" href="user.html">
+          <div class="tab-img">
+            <img src="../img/tabs-home.png" alt="">
+          </div>
+          <p class="tab-font">商城</p>
+        </a>
+        <a class="tab-item" href="user.html">
+          <div class="tab-img">
+            <img src="../img/tabs-home.png" alt="">
+          </div>
+          <p class="tab-font">蜀黍专区</p>
+        </a>
+        <a class="tab-item" href="user.html">
+          <div class="tab-img">
+            <img src="../img/tabs-home.png" alt="">
+          </div>
+          <p class="tab-font">社区</p>
+        </a>
+        <a class="tab-item" href="user.html">
+          <div class="tab-img">
+            <img src="../img/tabs-home.png" alt="">
+          </div>
+          <p class="tab-font">我的</p>
+        </a>
+      </div>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"> </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      // 使用详情关注swiper官网
+      var mySwiper = new Swiper ('.swiper-container', {
+        loop: true, // 循环模式选项
+        // 如果需要分页器
+        pagination: {
+          el: '.swiper-pagination',
+        },
+      })        
+      </script>
+  </body>
+</html>
